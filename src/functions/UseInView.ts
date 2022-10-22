@@ -16,7 +16,7 @@ const UseInView = (type: string, options: object) => {
     return () => {
       observer.unobserve(ElementRef.current);
     };
-  }, [inView]);
+  }, []);
 
   return { ElementRef, inView };
 };

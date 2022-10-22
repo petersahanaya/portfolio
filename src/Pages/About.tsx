@@ -113,10 +113,10 @@ const About = () => {
             </span>{" "}
           </footer>
         </nav>
-        <motion.nav ref={ElementRef} animate={animationParent} variants={questionVariant} className="questions">
           {questions.map((s, i) => (
+        <motion.nav key={i} ref={ElementRef} animate={animationParent} variants={questionVariant} className="questions">
             <>
-              <span key={i * 8} className={`question-${i + 1}`}>
+              <span className={`question-${i + 1}`}>
                 <div className="number-question">
                   <span className="span">
                     <p>{s.numbers}</p>
@@ -124,14 +124,14 @@ const About = () => {
                   </span>
                   {Array.isArray(s.answer) ? (
                     <h3>{`${s.answer[0]}, ${s.answer[1]}, ${s.answer[2]}`}</h3>
-                  ) : (
-                    <h3>{s.answer}</h3>
-                  )}
+                    ) : (
+                      <h3>{s.answer}</h3>
+                      )}
                 </div>
               </span>
             </>
-          ))}
         </motion.nav>
+          ))}
       </section>
     </motion.main>
   );
