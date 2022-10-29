@@ -113,9 +113,9 @@ const About = () => {
             </span>{" "}
           </footer>
         </nav>
+        <motion.nav  ref={ElementRef} animate={animationParent} variants={questionVariant} className="questions">
           {questions.map((s, i) => (
-        <motion.nav key={i} ref={ElementRef} animate={animationParent} variants={questionVariant} className="questions">
-            <>
+            <section key={i}>
               <span className={`question-${i + 1}`}>
                 <div className="number-question">
                   <span className="span">
@@ -129,9 +129,9 @@ const About = () => {
                       )}
                 </div>
               </span>
-            </>
-        </motion.nav>
+            </section>
           ))}
+          </motion.nav>
       </section>
     </motion.main>
   );

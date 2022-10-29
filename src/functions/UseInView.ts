@@ -12,10 +12,6 @@ const UseInView = (type: string, options: object) => {
 
   useEffect(() => {
     if (ElementRef.current) observer.observe(ElementRef.current);
-
-    return () => {
-      observer.unobserve(ElementRef.current);
-    };
   }, []);
 
   return { ElementRef, inView };

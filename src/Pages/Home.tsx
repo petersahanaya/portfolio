@@ -1,12 +1,13 @@
-import Header from "../component/header";
+import { useState, useEffect, lazy } from "react";
+const Header = lazy(() => import( "../component/header"))
+const Sidebar = lazy(() => import("../component/Sidebar"))
+const Email = lazy(() => import("./Email"))
+const About = lazy(() => import("./About"))
 import { HiReply } from "react-icons/Hi";
 import scribel from "./scribble.png";
-import About from "./About";
-import { useState, useEffect } from "react";
-import Sidebar from "../component/Sidebar";
+import { Link } from "react-router-dom";
 import UseInView from "../functions/UseInView";
 import { useAnimationControls, motion } from "framer-motion";
-import Email from "./Email";
 
 const Home = () => {
   const [toggle, setToggle] = useState(false);
@@ -65,7 +66,9 @@ const Home = () => {
               <button className="btn-hire">Hire me</button>
               </a>
               <div className="btn-project">
+                <Link to="/project">
                 <button>Project's</button>
+                </Link>
                 <span className="icon-project">
                   <HiReply />
                 </span>
