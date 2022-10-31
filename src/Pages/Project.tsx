@@ -1,5 +1,6 @@
 import {IoIosArrowBack} from 'react-icons/Io'
 import { SiGithub } from 'react-icons/Si'
+import { BiCart } from 'react-icons/Bi'
 import pcImg from './pc-home.webp'
 import login from './login.webp'
 import home from './home.webp'
@@ -37,7 +38,10 @@ const Project = () => {
         {preview && <>
           <div className="git-container">
             <a href="https://github.com/petersahanaya/e-commerce" target={'_blank'}>
-              <SiGithub className='git'/>
+              <SiGithub />
+            </a>
+            <a target={"_blank"} style={{marginLeft : ".7rem"}} href="https://p3tr.netlify.app">
+              <BiCart/>
             </a>
           </div>
 
